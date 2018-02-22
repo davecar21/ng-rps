@@ -1,0 +1,62 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+<div *ngIf="!playerName" class="formCont">
+  <form [formGroup]="rpsForm" (ngSubmit)="submit(rpsForm.value)" class="formBody">
+    <p>Hi, </p>
+    <mat-form-field class="nameInput">
+    <input matInput formControlName="playerName" placeholder="Your Name" maxlength="8" />
+  </mat-form-field>
+    <br/>
+    <p class="rps-title">Let's Play, Rock Paper Scissor. </p>
+    <br/>
+    <button type="submit" mat-raised-button color="primary" 
+    [disabled]="!rpsForm.valid">Let's Play</button>
+  </form>
+  
+</div>
+
+<div *ngIf="playerName" class="playCont">
+  <div class="btnMainMenu" (click)="mainMenu(); rpsForm.reset()">
+    <i class="fa fa-arrow-circle-left" aria-hidden="true"> Main Menu</i>
+  </div>
+  <div class="playArea">
+    <p class="rps-title">Rock Paper Scissor</p>
+    <div class="player">
+      <h3>{{playerName}} ss
+        <h1 id="playerScore">{{playerScore}}</h1>
+      </h3>
+    <i *ngIf="!loaderStatus; else showLoader" id="playerChoose" [className]="playerChoose" aria-hidden="true"></i>
+    </div>
+    
+    <div class="computer">
+      <h3>{{enemyName}}
+        <h1 id="enemyScore">{{enemyScore}}</h1>
+      </h3>
+      <i *ngIf="!loaderStatus; else showLoader" id="enemyChoose" [className]="enemyChoose"  aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="result" *ngIf="!loaderStatus">
+    <h2 *ngIf="winResult==1" class="playerWins">You Win!
+      <h4 class="resetScore" (click)="resetScore()">Reset Score?</h4></h2>
+    <h2 *ngIf="winResult==2" class="enemyWins">You Lose!
+      <h4 class="resetScore" (click)="resetScore()">Reset Score?</h4></h2>
+    <h2 *ngIf="winResult==0" class="draw">Draw!
+      <h4 class="resetScore" (click)="resetScore()">Reset Score?</h4>
+    </h2>
+  </div>
+
+  <div class="playerChoose" *ngIf="!loaderStatus">
+    <h2>Choose Your Weapon</h2>
+    <i (click)="rpsSelect(0)" class="fa fa-hand-rock-o" aria-hidden="true"></i>
+    <i (click)="rpsSelect(1)" class="fa fa-hand-paper-o" aria-hidden="true"></i>
+    <i (click)="rpsSelect(2)" class="fa fa-hand-scissors-o" aria-hidden="true"></i>
+  </div>
+</div>
+
+
+<ng-template #showLoader>
+      <mat-spinner [diameter]="70" class="progLoader"></mat-spinner>
+</ng-template>

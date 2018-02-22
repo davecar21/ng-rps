@@ -1,0 +1,153 @@
+p {
+  font-family: Lato;
+  display: inline-block;
+}
+i{
+  display: inline-block;
+}
+html,
+body{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.formCont, .playCont {
+  height: 100px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+  .formBody, .playArea, .playerChoose, .result{
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .nameInput{
+    width: 85px;
+    margin-left: 10px;
+  }
+  .btnMainMenu{
+    background: #400080;
+    top: 15px;
+    left: 15px;
+    position: absolute;
+    font-size: 18px;
+    color:white;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 15px;
+    cursor:pointer;
+  }
+  .player{
+    width: 45%;
+    float: left;
+    position: relative;
+    color: #000d33;
+  }
+  .computer{
+    width: 45%;
+    float: left;
+    position: relative;
+    color:#630303;
+  }
+  #playerScore, #enemyScore{
+    display: inline;
+    padding: 10px 20px;
+    margin-left:20px;
+    border-radius: 30px;
+    color: white;
+    position: absolute;
+    top: 0;
+  }
+  #playerScore{
+    background: #002db3;
+  }
+  #enemyScore{
+    background: #b30000;
+  }
+ 
+.playerChoose{
+  margin-top: 75px;
+}
+
+  #enemyChoose{
+    color:#b30000;
+    font-size: 70px;
+  }
+  #playerChoose{
+    color:#002db3;
+    font-size: 70px;
+  }
+  .playerChoose i{
+    width: 30%;
+    margin: 0 auto;
+    font-size: 90px;
+    color: #262626;
+  }
+  .playerChoose i:hover{
+    cursor: pointer;
+    font-size: 95px;
+    color: #a6a6a6;
+  }
+
+  .playerChoose h2{
+    display: inline-block;
+    width: 100%;
+  }
+
+  .result{
+    margin: 0 auto 0 auto;
+    display: inline-block;
+  }
+
+  .result .draw,.playerWins,.enemyWins{
+    display: inline-block;
+  }
+  .result .draw{
+    color:gray;
+  }
+  .result .playerWins{
+    color:#002DB3;
+  }
+  .result .enemyWins{
+    color:#B30000;
+  }
+  .result .resetScore{
+    font-size: 15px;
+    color:green;
+    margin: 5px 0px;
+    padding: 0;
+  }
+  .result .resetScore:hover{
+    cursor: pointer;
+    color: #024c00;
+    font-size: 17px;
+  }
+
+  .rps-title{
+    font-size:1.2em;
+    display: block;
+  }
+
+  .progLoader{
+    margin: 0 auto
+
+  }
+
+
+
+
+  @media screen and (min-width: 1000px){
+    .playArea{
+      width: 50%;
+    }
+    .playerChoose i{
+      width: 10%;
+    }
+  }
