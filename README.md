@@ -1,4 +1,4 @@
-# dmgrave-ng-rockpaperscissor
+# dmgrave-ng-rockpaperscissor https://davecar21.github.io/ng-rps/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
 
