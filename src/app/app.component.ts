@@ -31,7 +31,7 @@ export class AppComponent  {
   rpsSelect(rps){
     this.enemyResult = this.rpsOption[Math.floor(Math.random() * this.rpsOption.length)];
     this.playerResult = this.rpsOption[rps];
-    console.log("player"+this.playerResult+"enemy"+this.enemyResult);
+    console.log("player"+this.playerResult + 'enemy' + this.enemyResult);
     //Result Calculation
     if(this.enemyResult != this.playerResult){
       //0-rock 1-paper 2-scissor
@@ -77,5 +77,5 @@ export class AppComponent  {
 
   }
 
-  
+
 }
